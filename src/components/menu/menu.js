@@ -54,6 +54,11 @@ function menuMaker(menuArray) {
     links.textContent = item;
     menuList.appendChild(item);
   })
-
+// step 3
+const butMenu = document.querySelector('.menu-button');
+// step 4
+  butMenu.addEventListener('click', () => {
+    document.querySelector('div.menu').classList.toggle('menu--open');
+  })
 }
 
