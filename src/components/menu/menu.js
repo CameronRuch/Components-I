@@ -44,21 +44,26 @@ let menuItems = [
 
 function menuMaker(menuArray) {
 // step 1
-  const menu = document.createElement('div');
+  const menus = document.createElement('div');
   const menuList = document.createElement('ul');
-  menu.appendChild(menuList);
-  menu.classList(menuList);
+  menus.appendChild(menuList);
+  menus.classList.add('menu');
 // step 2
   menuArray.forEach(item => {
     const links = document.createElement('li');
     links.textContent = item;
-    menuList.appendChild(item);
+    menuList.appendChild(links);
   })
 // step 3
 const butMenu = document.querySelector('.menu-button');
 // step 4
   butMenu.addEventListener('click', () => {
-    document.querySelector('div.menu').classList.toggle('menu--open');
+    menus.classList.toggle('menu--open');
   })
+// step 5
+return menus;
 }
+// step 6
+document.querySelector('.header').appendChild(menuMaker(menuItems));
 
+console.log(menuMaker(menuItems));
