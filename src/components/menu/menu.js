@@ -48,6 +48,12 @@ function menuMaker(menuArray) {
   const menuList = document.createElement('ul');
   menu.appendChild(menuList);
   menu.classList(menuList);
+// step 2
+  menuArray.forEach(item => {
+    const links = document.createElement('li');
+    links.textContent = item;
+    menuList.appendChild(item);
+  })
 
 }
 
