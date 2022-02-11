@@ -137,12 +137,21 @@ function articleMaker (articleObj) {
   articleWrap.appendChild(articleParThree);
   articleWrap.appendChild(expandButton);
 
+  articleTitle.textContent = articleObj.title;
+  articleDate.textContent = articleObj.date;
+  articleParOne.textContent = articleObj.firstParagraph;
+  articleParTwo.textContent = articleObj.secondParagraph;
+  articleParThree.textContent = articleObj.thirdParagraph;
+  expandButton.textContent = "+";
 // step 2
   expandButton.addEventListener('click', () => {
     articleWrap.classList.toggle('article-open');
   })
 
-
-
+// step 3
+return articleWrap;
 }
 
+data.forEach(article => {
+  document.querySelector('div.articles').appendChild(articleMaker(article));
+})
