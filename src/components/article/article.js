@@ -137,8 +137,10 @@ function articleMaker (articleObj) {
   articleWrap.appendChild(articleParThree);
   articleWrap.appendChild(expandButton);
 
-
-
+// step 2
+  expandButton.addEventListener('click', () => {
+    articleWrap.classList.toggle('article-open');
+  })
 
 
 
